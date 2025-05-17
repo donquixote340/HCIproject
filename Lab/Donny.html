@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donny's Car Rental</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* Smooth scrolling for anchor links */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      color: #000;
+    }
+    .hero {
+      background-color: #333;
+      background-image: url('blackcar.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(0, 0, 0, 0.6);
+    }
+    .navbar img {
+      height: 40px;
+      vertical-align: middle;
+    }
+    .navbar h1 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      display: inline;
+      margin-left: 0.5rem;
+    }
+    .nav-links {
+      font-weight: 700;
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #ccc;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      color: #fff;
+    }
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 4rem;
+    }
+    .content h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .content h1 span {
+      color: #ff4e4e;
+    }
+    .btn {
+      margin-top: 2rem;
+      padding: 1rem 2rem;
+      background-color: #ff4e4e;
+      border: none;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      border-radius: 50px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #e84343;
+    }
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .mission {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+    }
+    .mission-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    .mission img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .mission img:hover {
+      transform: scale(1.05);
+    }
+    .offers {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .offer-box {
+      background: #f9f9f9;
+      padding: 1rem;
+      border-left: 4px solid #ff4e4e;
+      transition: transform 0.3s ease;
+    }
+    .offer-box:hover {
+      transform: scale(1.03);
+    }
+    .offer-box h3 {
+      color: #ff4e4e;
+      margin: 0.5rem 0;
+    }
+    .offer-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .offer-gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .offer-gallery img:hover {
+      transform: scale(1.05);
+    }
+    .footer {
+      background-color: #222;
+      color: #fff;
+      padding: 4rem 2rem;
+      margin-top: 2rem;
+    }
+    .footer h2 {
+      color: #ff4e4e;
+      font-weight: 900;
+    }
+    .feedbacks, .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .feedback {
+      flex: 1;
+      min-width: 250px;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .feedback h3 {
+      color: #ff4e4e;
+    }
+    .feedback img {
+      width: 64px;
+      height: 64px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+    .feedback img:hover {
+      transform: scale(1.1);
+    }
+    .contact-box {
+      flex: 1;
+      min-width: 250px;
+    }
+    .contact-box h4 {
+      color: #ff4e4e;
+      margin-bottom: 0.5rem;
+    }
+    .contact-image {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      margin-top: 2rem;
+      transition: transform 0.3s ease;
+    }
+    .contact-image:hover {
+      transform: scale(1.05);
+    }
+    .rights {
+      text-align: center;
+      margin-top: 4rem;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO / LANDING PAGE -->
+  <div class="hero" id="home">
+    <div class="navbar">
+      <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" alt="BMW Logo">
+        <h1>DONNY'S CAR RENTAL</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#offers">OFFERS</a>
+        <a href="#about">ABOUT</a>
+        <a href="#contact">CONTACT US</a>
+      </div>
+    </div>
+    <div class="content">
+      <h1>LET'S GET YOU<br><span>ON THE ROAD</span></h1>
+      <button class="btn" onclick="location.href='#offers'">GET STARTED →</button>
+    </div>
+  </div>
+
+  <!-- MISSION / ABOUT SECTION -->
+  <div class="section" id="about">
+    <div class="mission">
+      <div class="mission-text">
+        <h2 style="color: #ff4e4e; font-weight: 900;">DONNY'S MISSION</h2>
+        <p>Donny’s Car Rental is a leading brand in car design, manufacturing, and maintenance. With our cutting-edge technology, we give you tomorrow's vehicles, today!</p>
+      </div>
+      <img src="3.jpg" alt="Mission Car" />
+    </div>
+  </div>
+
+  <!-- OFFERS SECTION -->
+  <div class="section" id="offers">
+    <div class="offers">
+      <div class="offer-box">
+        <h2>1</h2>
+        <h3>Brand New Models</h3>
+        <p>Browse and buy the brand's best available models</p>
+      </div>
+      <div class="offer-box">
+        <h2>2</h2>
+        <h3>Full Service</h3>
+        <p>Car repair and maintenance available 24/7</p>
+      </div>
+      <div class="offer-box">
+        <h2>3</h2>
+        <h3>Pre-owned Vehicles</h3>
+        <p>Certified pre-owned Donny cars for every budget</p>
+      </div>
+      <div class="offer-box">
+        <h2>4</h2>
+        <h3>Custom Details</h3>
+        <p>Elevate your ride with custom-made upgrades</p>
+      </div>
+    </div>
+
+    <div class="offer-gallery">
+      <img src="66.jpg" alt="Brand New Models">
+      <img src="33.jpg" alt="Full Service">
+      <img src="55.jpg" alt="Pre-owned Vehicles">
+      <img src="44.jpg" alt="Custom Details">
+    </div>
+  </div>
+
+  <!-- FOOTER / CONTACT SECTION -->
+  <div class="footer" id="contact">
+    <h2>CLIENTS FEEDBACKS</h2>
+    <div class="feedbacks">
+      <div class="feedback">
+        <img src="8.jpg" alt="Client 1">
+        <div>
+          <h3>Mike Charlie Rosa</h3>
+          <p>My car badly needed repair so early in the morning and Donny Auto came thru at 4:30 am! Talk about excellent customer service!</p>
+        </div>
+      </div>
+      <div class="feedback">
+        <img src="7.jpg" alt="Client 2">
+        <div>
+          <h3>Rhenz Daived Peligan</h3>
+          <p>The brand new models available at the showroom made it hard for me to choose—they were all so good and I wanted them all.</p>
+        </div>
+      </div>
+      <div class="feedback">
+        <img src="9.jpg" alt="Client 3">
+        <div>
+          <h3>Ulysis Ilagan</h3>
+          <p>Donny’s Car Rental has assisted me from start to finish. They listened to what I needed and suggested models based on my budget.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 4rem;">GET IN TOUCH</h2>
+    <div class="contact-info">
+      <div class="contact-box">
+        <h4>Mailing Address</h4>
+        <p>P6 Santa Rita Karsada, Batangas City<br />Batangas, Philippines</p>
+        <h4>Phone Number</h4>
+        <p>+63 9123456789</p>
+      </div>
+      <div class="contact-box">
+        <h4>Email Address</h4>
+        <p>donnycarrental123@gmail.com</p>
+        <h4>Socials</h4>
+        <p>@DonnysCar</p>
+      </div>
+    </div>
+
+    <div class="rights">© 2025 Donny's Car Rental. All rights reserved.</div>
+  </div>
+</body>
+</html>
